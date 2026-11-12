@@ -1,0 +1,8 @@
+docs(readme): rebuild mirror notice with explicit URL-based install
+
+The primary install command in the original README is `add dsh-purge`,
+which resolves through npm — and `dsh-purge` on npm is only a
+placeholder (0.0.0-stage), so following it installs nothing useful.
+
+The notice now states the three working install commands (web / desktop
+/ offline tarball) using full URLs, and keeps the attribution intact.

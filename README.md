@@ -6,10 +6,12 @@
 > This repository preserves the complete **v1.1.71** source so the plugin stays installable.
 >
 > - **Copyright belongs to the original author YuJunZhiXue**, MIT licensed, full `LICENSE` in the repo root
-> - Follows the upstream attribution requirement: if you reuse the name / ideas / code / prompts, you must credit
->   and link back to the source repository
+> - Follows the upstream attribution requirement: reuse of the name / ideas / code / prompts requires credit
 > - **Non-commercial only** (upstream: a non-profit project; resale and abusive use are prohibited)
-> - Install URLs already point at this repository — the commands below work as-is
+> - **Install from the full URL, not the package name** (`dsh-purge` on npm is a placeholder):
+>   - Web: `dsh plugin --profile web add https://github.com/kangyu087/dsh-purge.git`
+>   - Desktop: `dsh plugin --profile desktop add https://github.com/kangyu087/dsh-purge.git`
+>   - Offline: `dsh plugin --profile web add https://github.com/kangyu087/dsh-purge/archive/refs/heads/master.tar.gz`
 >
 > ---
 
