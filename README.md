@@ -8,6 +8,7 @@
 > - **Copyright belongs to the original author YuJunZhiXue**, MIT licensed, full `LICENSE` in the repo root
 > - Follows the upstream attribution requirement: reuse of the name / ideas / code / prompts requires credit
 > - **Non-commercial only** (upstream: a non-profit project; resale and abusive use are prohibited)
+> - **Verified on official desktop dsh `0.2.1-rc.3`** (profile `desktop`); plugin code is unmodified
 > - **Install from the full URL, not the package name** (`dsh-purge` on npm is a placeholder):
 >   - Web: `dsh plugin --profile web add https://github.com/kangyu087/dsh-purge.git`
 >   - Desktop: `dsh plugin --profile desktop add https://github.com/kangyu087/dsh-purge.git`

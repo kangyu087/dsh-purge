@@ -91,7 +91,7 @@
   "engines": {
     "node": ">=18"
   },
-  "dshTarget": "0.2.0-rc.2",
+  "dshTarget": "0.2.1-rc.3",
   "upstream": {
     "repository": "https://github.com/YuJunZhiXue/dsh-purge",
     "name": "dsh-purge",

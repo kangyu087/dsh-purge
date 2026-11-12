@@ -1,8 +1,8 @@
-docs(readme): rebuild mirror notice with explicit URL-based install
+chore: target dsh 0.2.1-rc.3 and document the verified host version
 
-The primary install command in the original README is `add dsh-purge`,
-which resolves through npm — and `dsh-purge` on npm is only a
-placeholder (0.0.0-stage), so following it installs nothing useful.
-
-The notice now states the three working install commands (web / desktop
-/ offline tarball) using full URLs, and keeps the attribution intact.
+- package.json dshTarget: 0.2.0-rc.2 -> 0.2.1-rc.3
+  (`dshTarget` is metadata only - grepping the dsh 0.2.1-rc.3 runtime shows
+   no code reads it, so this does not change install behaviour)
+- README(.zh-CN): state that the plugin was verified running on the official
+  desktop dsh 0.2.1-rc.3 with profile `desktop`
+- plugin code untouched; version stays 1.1.71
