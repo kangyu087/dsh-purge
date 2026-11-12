@@ -222,9 +222,9 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"uninstall.done": "已卸载并还原，正在重启…",
 			"uninstall.done.desktop": "已卸载并还原，正在重启桌面应用…",
 			"uninstall.fail": "卸载失败: {error}",
-			"btn.checkUpdate": "检测更新",
+			"btn.checkUpdate": "更新已禁用",
 			"btn.checkUpdate.busy": "检测中…",
-			"btn.doUpdate": "更新",
+			"btn.doUpdate": "更新已禁用",
 			"btn.doUpdate.busy": "更新中…",
 			"channel.title": "通道",
 			"channel.stable": "正式版",
@@ -562,9 +562,9 @@ window.__ModuleLoader__.load({ id: "dsh-purge", factory: (require) => {
 			"uninstall.done": "Uninstalled and restored. Restarting…",
 			"uninstall.done.desktop": "Uninstalled and restored. Restarting the desktop app…",
 			"uninstall.fail": "Uninstall failed: {error}",
-			"btn.checkUpdate": "Check update",
+			"btn.checkUpdate": "Updates disabled",
 			"btn.checkUpdate.busy": "Checking…",
-			"btn.doUpdate": "Update",
+			"btn.doUpdate": "Updates disabled",
 			"btn.doUpdate.busy": "Updating…",
 			"channel.title": "Channel",
 			"channel.stable": "Stable",
@@ -1853,7 +1853,7 @@ body:not([data-ds-dark-theme]) .dshp-auth-ops button.primary{background:var(--ds
 				let actionLabel = t("btn.checkUpdate");
 				let actionKind;
 				let actionClick = () => checkUpdate(id);
-				let actionDisabled = updateBusy || Boolean(noBeta);
+				let actionDisabled = true; // mirror build: online update disabled
 				if (noBeta) {
 					actionLabel = t("update.noBeta");
 					actionClick = () => {};

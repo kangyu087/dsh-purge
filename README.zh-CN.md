@@ -9,6 +9,7 @@
 > - 遵循上游「[署名要求](#署名要求)」：借用名称 / 思路 / 代码 / 提示词必须署名并写明来源
 > - **禁止商用**（上游明确：非盈利公益项目，严禁付费倒卖或黑灰产牟利）
 > - **实测运行于官方桌面端 dsh `0.2.1-rc.3`**（profile `desktop`），插件本体未做任何改动
+> - **在线更新已禁用**：本镜像由维护者手动发布，插件不会去 GitHub 检查或拉取更新，面板「检测更新」按钮为禁用态
 > - **安装必须用完整 URL，不要用包名 `dsh-purge`**（npm 上是占位包，装了没用）：
 >   - Web：`dsh plugin --profile web add https://github.com/kangyu087/dsh-purge.git`
 >   - 桌面端：`dsh plugin --profile desktop add https://github.com/kangyu087/dsh-purge.git`

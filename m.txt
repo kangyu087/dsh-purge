@@ -1,8 +1,14 @@
-chore: target dsh 0.2.1-rc.3 and document the verified host version
+feat: disable online update in the mirror build
 
-- package.json dshTarget: 0.2.0-rc.2 -> 0.2.1-rc.3
-  (`dshTarget` is metadata only - grepping the dsh 0.2.1-rc.3 runtime shows
-   no code reads it, so this does not change install behaviour)
-- README(.zh-CN): state that the plugin was verified running on the official
-  desktop dsh 0.2.1-rc.3 with profile `desktop`
-- plugin code untouched; version stays 1.1.71
+- lib/update.js: add MIRROR_NO_UPDATE flag (true)
+  - checkUpdate() short-circuits and returns a disabled state; it no longer
+    queries GitHub for tags / releases
+  - handleUpdateOp() rejects every update operation
+  - autoUpdateIfNeeded() was already a no-op (`skipped: manual-only`)
+- client.js: the update button now reads "更新已禁用 / Updates disabled"
+  and is permanently disabled
+- README(.zh-CN): document that online update is turned off
+
+Rationale: this mirror is published manually by the maintainer. Letting the
+plugin self-update against a repository it does not own the release flow of
+would only produce spurious "update available" prompts.
