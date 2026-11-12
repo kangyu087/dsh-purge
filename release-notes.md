@@ -1,5 +1,15 @@
 # 1.1.71
 
+> **镜像构建说明 / Mirror build**
+>
+> 本仓库是 [`YuJunZhiXue/dsh-purge`](https://github.com/YuJunZhiXue/dsh-purge) **v1.1.71** 的镜像，
+> 上游仓库已不可访问（HTTP 404），npm 上的 `dsh-purge` 仅为占位包（`0.0.0-stage`）。
+> 安装地址已指向本仓库，**在线更新已禁用**。版权归原作者 YuJunZhiXue，MIT 许可，禁止商用。
+>
+> This repository mirrors **v1.1.71** of `YuJunZhiXue/dsh-purge`. Upstream is unreachable (HTTP 404)
+> and `dsh-purge` on npm is only a placeholder. Install URLs point here; **online update is disabled**.
+> Copyright belongs to the original author YuJunZhiXue. MIT licensed, non-commercial only.
+
 ## 中文
 
 - 版本 **1.1.71**。
@@ -8,6 +18,16 @@
 - `installed-rev` 跨版本不再沿用旧 `apply:x.y.z`。#88 按现行 `renderedPrompt` / 旧 `system` 锚点打中的那条落标记。
 - 发版前 `node --check` 主入口，避免再把语法错误打进 Release。
 
+### 镜像构建改动（本仓库相对原版）
+
+- **仓库地址**：`package.json` 的 `repository` / `homepage` / `bugs` / `dsh.install.{tarball,zip,git}`，以及 README 里的备用 tarball、`git clone` 命令、`dsh://` 一键安装链接，全部改指本仓库。
+- **在线更新已禁用**：新增 `MIRROR_NO_UPDATE = true` 开关。
+  `checkUpdate()` 直接返回禁用态，不再访问 GitHub 查询 tags / releases；
+  `handleUpdateOp()` 拒绝 `apply` / `check` / `channel` / `switch` / `rollback` / `auto` 全部操作；
+  面板按钮文案改为「更新已禁用」并永久置灰。
+- **目标宿主**：`dshTarget` 由 `0.2.0-rc.2` 更新为 `0.2.1-rc.3`（实测运行版本，`dshTarget` 仅为元数据，dsh 不读取）。
+- **插件本体未改动**：`lib/core.js`、`lib/index.js`、`lib/identity.js`、`bin/` 与原版逐文件哈希一致。
+
 ## English
 
 - **1.1.71**.
@@ -15,6 +35,16 @@
 - #86 keeps UI queue steer → followup. Public `steer()` is next-step again so `send_message` inserts at the next step.
 - Stale `apply:x.y.z` in `installed-rev` refreshes across versions. #88 marks the host anchor that actually exists (`renderedPrompt` or `system`).
 - Release CI syntax-checks the plugin entry.
+
+### Mirror build changes (this repository vs. original)
+
+- **Repository URLs**: `package.json` `repository` / `homepage` / `bugs` / `dsh.install.{tarball,zip,git}`, plus the README fallback tarball, `git clone` command and `dsh://` one-click link, all repointed to this repository.
+- **Online update disabled**: new `MIRROR_NO_UPDATE = true` flag.
+  `checkUpdate()` returns a disabled state immediately and no longer queries GitHub for tags / releases;
+  `handleUpdateOp()` rejects every operation (`apply` / `check` / `channel` / `switch` / `rollback` / `auto`);
+  the panel button reads "Updates disabled" and is permanently greyed out.
+- **Target host**: `dshTarget` changed from `0.2.0-rc.2` to `0.2.1-rc.3` (the verified runtime version; `dshTarget` is metadata only and not read by dsh).
+- **Plugin core untouched**: `lib/core.js`, `lib/index.js`, `lib/identity.js`, `bin/` are byte-identical to the original release.
 
 # 1.1.70
 
